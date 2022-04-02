@@ -7,6 +7,7 @@
     "build": "tsc && vite build",
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
     "format:fix": "prettier --ext .tsx,.ts src/ --fix",
+    "test:storyshots": "jest -c jest.config.storyshots.js",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -23,6 +24,7 @@
     "@storybook/addon-essentials": "^6.4.19",
     "@storybook/addon-interactions": "^6.4.19",
     "@storybook/addon-links": "^6.4.19",
+    "@storybook/addon-storyshots": "6.4.20",
     "@storybook/builder-webpack5": "^6.4.19",
     "@storybook/manager-webpack5": "^6.4.19",
     "@storybook/react": "^6.4.19",
