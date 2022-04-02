@@ -19,6 +19,11 @@ const Squares = styled.div`
   margin: 0 auto;
 `
 
+const Div = styled.div`
+  padding: 24px;
+  text-align: center;
+`
+
 export const Board = ({
    winner,
    player,
@@ -34,10 +39,10 @@ export const Board = ({
                <Square key={index} index={index} onClick={handlePlayClick} marker={marker} />
             ))}
          </Squares>
-         <div>
+         <Div>
             {renderStatus()}
             <Button onClick={handleResetClick} />
-         </div>
+         </Div>
       </div>
    );
 }
