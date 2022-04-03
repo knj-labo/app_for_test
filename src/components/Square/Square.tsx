@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from '@emotion/styled';
 
 type Props = {
@@ -20,19 +21,19 @@ const Div = styled.div`
     background-color: #d3cce3;
   }
 
-  &:nth-child(-n + 3) {
+  &:nth-of-type(-n + 3) {
     border-top: unset;
   }
 
-  &:nth-last-child(-n + 3) {
+  &:nth-last-of-type(-n + 3) {
     border-bottom: unset;
   }
 
-  &:nth-child(3n) {
+  &:nth-of-type(3n) {
     border-right: unset;
   }
 
-  &:nth-child(3n + 1) {
+  &:nth-of-type(3n + 1) {
     border-left: unset;
   }
 `

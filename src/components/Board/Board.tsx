@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button } from '@/components/Button/Button';
 import { Square } from '@/components/Square/Square';
 import styled from '@emotion/styled';
