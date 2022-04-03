@@ -1,5 +1,5 @@
 import type {Config} from '@jest/types';
-
+import { createSerializer } from '@emotion/jest';
 const esModules = ['@storybook/addon-docs',].join('|');
 
 const config: Config.InitialOptions = {
@@ -15,6 +15,7 @@ const config: Config.InitialOptions = {
     transformIgnorePatterns: [`/node_modules/(?!${esModules})`],
     moduleNameMapper: {
         "^@/(.+)": "<rootDir>/src/$1"
-    }
+    },
+    snapshotSerializers: ["@emotion/jest/serializer"]
 };
 export default config;

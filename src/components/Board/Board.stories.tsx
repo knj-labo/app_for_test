@@ -22,3 +22,25 @@ Primary.args = {
     handleResetClick: () => null,
     renderStatus: () => <h3>次のプレイヤー</h3>,
 };
+
+export const setAllCircles = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+setAllCircles.args = {
+    winner:'',
+    player:'O',
+    boards: Array(9).fill('O'),
+    handlePlayClick: () => null,
+    handleResetClick: () => null,
+    renderStatus: () => <h3>次のプレイヤー</h3>,
+};
+
+export const setAllCrosses = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+setAllCrosses.args = {
+    winner:'',
+    player:'O',
+    boards: Array(9).fill('×'),
+    handlePlayClick: () => null,
+    handleResetClick: () => null,
+    renderStatus: () => <h3>次のプレイヤー</h3>,
+};
