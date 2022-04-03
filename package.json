@@ -7,7 +7,7 @@
     "build": "tsc && vite build",
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
     "format:fix": "prettier --ext .tsx,.ts src/ --fix",
-    "test:storyshots": "jest -c jest.config.storyshots.js",
+    "test:storyshots": "jest -c jest.config.ts",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -38,6 +38,8 @@
     "@vitejs/plugin-react": "^1.0.7",
     "babel-jest": "27.5.1",
     "babel-loader": "^8.2.4",
+    "esbuild": "0.14.30",
+    "esbuild-jest": "0.5.0",
     "eslint": "^8.12.0",
     "eslint-config-airbnb": "19.0.4",
     "eslint-config-prettier": "8.5.0",
@@ -46,8 +48,10 @@
     "eslint-plugin-react": "7.29.4",
     "eslint-plugin-react-hooks": "4.4.0",
     "jest": "27.5.1",
+    "jest-transform-stub": "2.0.0",
     "prettier": "2.6.1",
     "react-test-renderer": "18.0.0",
+    "ts-node": "10.7.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0"
   }
