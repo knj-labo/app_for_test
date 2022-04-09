@@ -8,6 +8,7 @@
     "lint:fix": "eslint --ext .tsx,.ts src/ --fix",
     "format:fix": "prettier --ext .tsx,.ts src/ --fix",
     "test:storyshots": "jest -c jest.config.ts",
+    "test:puppeteer": "jest Storyshot",
     "preview": "vite preview",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
@@ -29,6 +30,7 @@
     "@storybook/addon-interactions": "^6.5.0-alpha.55",
     "@storybook/addon-links": "^6.5.0-alpha.55",
     "@storybook/addon-storyshots": "6.5.0-alpha.55",
+    "@storybook/addon-storyshots-puppeteer": "6.4.21",
     "@storybook/builder-webpack5": "^6.5.0-alpha.55",
     "@storybook/manager-webpack5": "^6.5.0-alpha.55",
     "@storybook/react": "^6.5.0-alpha.55",
@@ -54,6 +56,7 @@
     "jest": "26.6.3",
     "jest-transform-stub": "2.0.0",
     "prettier": "2.6.1",
+    "puppeteer": "13.5.2",
     "react-test-renderer": "18.0.0",
     "ts-jest": "26.5.5",
     "ts-node": "10.7.0",

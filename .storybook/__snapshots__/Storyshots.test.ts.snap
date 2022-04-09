@@ -16,6 +16,7 @@ exports[`Storyshots Components/Board Primary 1`] = `
 }
 
 .emotion-1 {
+  color: red;
   width: 100px;
   height: 100px;
   border: 3px solid #555;
@@ -169,6 +170,7 @@ exports[`Storyshots Components/Board Set All Circles 1`] = `
 }
 
 .emotion-1 {
+  color: red;
   width: 100px;
   height: 100px;
   border: 3px solid #555;
@@ -340,6 +342,7 @@ exports[`Storyshots Components/Board Set All Crosses 1`] = `
 }
 
 .emotion-1 {
+  color: red;
   width: 100px;
   height: 100px;
   border: 3px solid #555;

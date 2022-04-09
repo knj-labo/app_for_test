@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Board } from '@/components/Board/Board';
 
-// More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
+// @see https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'Components/Board',
     component: Board,
@@ -13,18 +13,18 @@ export default {
 const Template: ComponentStory<typeof Board> = (args) => <Board {...args} />;
 
 export const Primary = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
+const primaryData = {
     winner:'',
     player:'O',
-    boards: Array(9).fill(null),
+    boards: Array(12).fill(null),
     handlePlayClick: () => null,
     handleResetClick: () => null,
     renderStatus: () => <h3>次のプレイヤー</h3>,
-};
-
+}
+Primary.args = {
+    ...primaryData
+}
 export const setAllCircles = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 setAllCircles.args = {
     winner:'',
     player:'O',
@@ -35,7 +35,6 @@ setAllCircles.args = {
 };
 
 export const setAllCrosses = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
 setAllCrosses.args = {
     winner:'',
     player:'O',
