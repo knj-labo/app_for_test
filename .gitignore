@@ -1,5 +1,6 @@
 # build
-build
+public/*
+!public/index.html
 
 # dependency
 node_modules
