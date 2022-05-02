@@ -38,6 +38,7 @@ export function Button({
   return (
     <button
       type="button"
+      data-cy="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
       style={{ backgroundColor }}
       {...props}
