@@ -2,8 +2,8 @@
   "name": "tic-tac-toe",
   "scripts": {
     "lint": "eslint --fix --ext .jsx,.js,.tsx,.ts src/",
-    "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server --open --config webpack/development.js",
+    "build": "webpack --config webpack/production.js",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
