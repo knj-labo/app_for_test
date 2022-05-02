@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
-import { Button } from './shared/Button';
+import React from 'react';
 
-export const App: React.FC = () => {
-    const [isVisible, setIsVisible] = useState(!false)
-    const handleClick = () => setIsVisible(false);
-    return (
-        <div>
-            {isVisible && (
-                <Button label='text' onClick={handleClick}/>
-            )}
-        </div>
-    )
-};
+import { Game } from './shared/Game';
+
+export function App() {
+  return (
+    <>
+      <header />
+      <Game />
+      <footer />
+    </>
+  );
+}
