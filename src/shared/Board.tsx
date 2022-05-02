@@ -20,8 +20,18 @@ const Box = styled.div`
 `;
 
 export const Board = () => {
+  const initialWinner = '';
+  const initialPlayer = 'O';
   const initialBoards = Array(9).fill('');
   const [boards, setBoards] = useState<Marker[]>(initialBoards);
+  const [winner, setWinner] = useState<string>(initialWinner);
+  const [player, setPlayer] = useState<Marker>(initialPlayer);
+
+  const handlePlayClick = useCallback((index: number) => {
+        if (winner) return;
+        if (boards[index]) return;
+        setBoards((prevBoards) => prevBoards.map((board, _index) => (_index === index ? player : board)));
+    },[]);
 
   const handleResetClick = useCallback(() => {
     setBoards(initialBoards);
@@ -30,7 +40,7 @@ export const Board = () => {
     <div>
       <Squares>
         {boards.map((marker, index) => (
-          <Square key={index} index={index} marker={marker} />
+          <Square key={index} index={index} marker={marker} onClick={handlePlayClick}/>
         ))}
       </Squares>
       <Box>
