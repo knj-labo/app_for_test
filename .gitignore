@@ -1,8 +1,11 @@
 # build
-build
+public/*
+!public/index.html
 
 # dependency
 node_modules
 
 # editor
 .idea
+# Local Netlify folder
+.netlify
