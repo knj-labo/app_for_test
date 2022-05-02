@@ -4,6 +4,7 @@
     "jsx": "react",
     "lib": ["dom", "dom.iterable", "esnext"],
     "module": "esnext",
+    "moduleResolution": "node",
     "outDir": "build",
     "sourceMap": true,
     "strict": true,
