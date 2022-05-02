@@ -1,12 +1,11 @@
 import React from 'react';
 
-export function Board() {
+export const Board = () => {
   return (
     <div className="squares">
-      <button type="button" tabIndex={0} onClick={() => null} onKeyPress={() => null}>
-
-        X
+      <button type="button" tabIndex={0}>
+          text
       </button>
     </div>
   );
-}
+};

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from '@emotion/styled';
-
 import { Board } from './Board';
 
 const Main = styled.main`
@@ -10,10 +9,8 @@ const Main = styled.main`
   align-items: center;
 `;
 
-export function Game() {
-  return (
-    <Main>
-      <Board />
-    </Main>
-  );
-}
+export const Game = () => (
+  <Main>
+    <Board />
+  </Main>
+);
