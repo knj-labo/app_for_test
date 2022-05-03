@@ -1,9 +1,6 @@
 import React, { useCallback, useMemo, useState } from 'react';
 
 import type { Marker } from './Board';
-import {
-    ReactNode
-} from "../../../../../../../Applications/WebStorm.app/Contents/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/react";
 
 type UseBoardProps = {
     initialBoards : Marker[]
