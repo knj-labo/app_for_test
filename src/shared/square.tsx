@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 
-import { Marker } from './Board'
+import { Marker } from './Board';
 
 type Props = {
     marker: Marker;
@@ -33,12 +33,10 @@ const Button = styled.div`
   &:nth-of-type(3n + 1) {
     border-left: unset;
   }
-`
+`;
 
-export const Square = ({marker, index, onClick}: Props): JSX.Element => {
-    return (
-        <Button role="button" tabIndex={0} key={index} onClick={() => onClick(index)}>
-            {marker}
-        </Button>
-    );
-}
+export const Square = ({ marker, index, onClick }: Props): JSX.Element => (
+  <Button role="button" tabIndex={0} key={index} onClick={() => onClick(index)}>
+    {marker}
+  </Button>
+);
