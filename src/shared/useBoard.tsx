@@ -14,6 +14,7 @@ type UseBoardResult = {
     boards: any[];
     handlePlayClick: (index: number) => void;
     handleResetClick: () => void;
+    renderGameStatus: () => JSX.Element;
 }
 
 export const useBoard = ({ initialBoards, initialWinner, initialPlayer }: UseBoardProps):UseBoardResult => {
@@ -62,11 +63,20 @@ export const useBoard = ({ initialBoards, initialWinner, initialPlayer }: UseBoa
     setWinner(initialWinner);
   }, []);
 
+  const renderGameStatus = ():JSX.Element => (
+    <h3>
+      { boards.every((marker) => marker !== '') && !winner && 'Draw' }
+      { !boards.every((marker) => marker !== '') && !winner && `Player: ${player === 'O' ? 'X' : 'O'}`}
+      {winner && `Winner: ${winner}`}
+    </h3>
+  );
+
   return {
     winner,
     player,
     boards,
     handlePlayClick,
     handleResetClick,
+    renderGameStatus,
   };
 };

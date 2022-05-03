@@ -25,16 +25,12 @@ export const Board = () => {
   const initialPlayer = 'O';
   const initialBoards = Array(9).fill('');
   const {
-    winner, player, boards, handlePlayClick, handleResetClick,
+    winner, player, boards, handlePlayClick, handleResetClick, renderGameStatus,
   } = useBoard({ initialBoards, initialPlayer, initialWinner });
   return (
     <div>
-        <h3>
-            { boards.every((marker) => marker !== '') && !winner && 'Draw' }
-            { !boards.every((marker) => marker !== '') && !winner && `Player: ${player === 'O' ? 'X' : 'O'}`}
-            {winner && `Winner: ${winner}`}
-        </h3>
-        <Squares>
+      {renderGameStatus()}
+      <Squares>
         {boards.map((marker, index) => (
           <Square key={index} index={index} marker={marker} onClick={handlePlayClick} />
         ))}
