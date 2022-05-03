@@ -1,49 +1,27 @@
 import React from 'react';
-import './button.css';
+import styled from '@emotion/styled';
 
-interface ButtonProps {
-  /**
-   * Is this the principal call to action on the page?
-   */
-  primary?: boolean;
-  /**
-   * What background color to use
-   */
-  backgroundColor?: string;
-  /**
-   * How large should the button be?
-   */
-  size?: 'small' | 'medium' | 'large';
-  /**
-   * Button contents
-   */
-  label: string;
-  /**
-   * Optional click handler
-   */
-  onClick?: () => void;
-}
+type Props = {
+    onClick: () => void;
+};
 
-/**
- * Primary UI component for user interaction
- */
-export function Button({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
-  return (
-    <button
-      type="button"
-      data-cy="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
-    </button>
-  );
-}
+const StyledButton = styled.button`
+  font-size: 16px;
+  padding: 8px 0;
+  width: 240px;
+  border: 1.5px solid #555;
+  border-radius: 100px;
+  background-color: transparent;
+  transition: 0.3s;
+  cursor: pointer;
+  &:hover {
+    background-color: #555;
+    color: white;
+  }
+`;
+
+export const Button = ({ onClick }: Props): JSX.Element => (
+  <StyledButton type="button" onClick={onClick}>
+    Reset
+  </StyledButton>
+);

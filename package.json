@@ -8,12 +8,18 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
+    "@emotion/react": "11.9.0",
+    "@emotion/styled": "11.8.1",
     "jest": "28.0.3",
     "react": "18.1.0",
     "react-dom": "18.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.17.10",
+    "@babel/plugin-syntax-jsx": "7.16.7",
+    "@babel/preset-env": "7.17.10",
+    "@babel/preset-react": "7.16.7",
+    "@emotion/babel-plugin": "11.9.2",
     "@storybook/addon-actions": "^6.4.22",
     "@storybook/addon-essentials": "^6.4.22",
     "@storybook/addon-interactions": "^6.4.22",
