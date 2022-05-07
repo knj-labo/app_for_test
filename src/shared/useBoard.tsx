@@ -62,9 +62,9 @@ export const useBoard = ({ initialBoards, initialWinner, initialPlayer }: UseBoa
   }, []);
 
   const renderGameStatus = ():JSX.Element => (
-    <h3>
+    <h3 data-testid='status'>
       { boards.every((marker) => marker !== '') && !winner && 'Draw' }
-      { !boards.every((marker) => marker !== '') && !winner && `Player: ${player === 'O' ? 'X' : 'O'}`}
+      { !boards.every((marker) => marker !== '') && !winner && `Next player: ${player === 'O' ? 'X' : 'O'}`}
       {winner && `Winner: ${winner}`}
     </h3>
   );
