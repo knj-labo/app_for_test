@@ -14,8 +14,10 @@ specifiers:
   '@storybook/addon-links': ^6.4.22
   '@storybook/react': ^6.4.22
   '@storybook/testing-library': ^0.0.11
+  '@testing-library/dom': 8.13.0
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.2.0
+  '@testing-library/react-hooks': 8.0.0
   '@testing-library/user-event': 14.1.1
   '@types/jest': 27.4.1
   '@types/react': 18.0.8
@@ -63,9 +65,11 @@ devDependencies:
   '@storybook/addon-links': 6.4.22_react-dom@18.1.0+react@18.1.0
   '@storybook/react': 6.4.22_c7742ba54d96c1df0bb758c5305b37bb
   '@storybook/testing-library': 0.0.11_react-dom@18.1.0+react@18.1.0
+  '@testing-library/dom': 8.13.0
   '@testing-library/jest-dom': 5.16.4
   '@testing-library/react': 13.2.0_react-dom@18.1.0+react@18.1.0
-  '@testing-library/user-event': 14.1.1
+  '@testing-library/react-hooks': 8.0.0_47ae209ab5c2ea051c9a2540426c6b2f
+  '@testing-library/user-event': 14.1.1_@testing-library+dom@8.13.0
   '@types/jest': 27.4.1
   '@types/react': 18.0.8
   '@types/react-dom': 18.0.3
@@ -3668,6 +3672,29 @@ packages:
       redent: 3.0.0
     dev: true
 
+  /@testing-library/react-hooks/8.0.0_47ae209ab5c2ea051c9a2540426c6b2f:
+    resolution: {integrity: sha512-uZqcgtcUUtw7Z9N32W13qQhVAD+Xki2hxbTR461MKax8T6Jr8nsUvZB+vcBTkzY2nFvsUet434CsgF0ncW2yFw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@types/react': ^16.9.0 || ^17.0.0
+      react: ^16.9.0 || ^17.0.0
+      react-dom: ^16.9.0 || ^17.0.0
+      react-test-renderer: ^16.9.0 || ^17.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react-dom:
+        optional: true
+      react-test-renderer:
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@types/react': 18.0.8
+      react: 18.1.0
+      react-dom: 18.1.0_react@18.1.0
+      react-error-boundary: 3.1.4_react@18.1.0
+    dev: true
+
   /@testing-library/react/13.2.0_react-dom@18.1.0+react@18.1.0:
     resolution: {integrity: sha512-Bprbz/SZVONCJy5f7hcihNCv313IJXdYiv0nSJklIs1SQCIHHNlnGNkosSXnGZTmesyGIcBGNppYhXcc11pb7g==}
     engines: {node: '>=12'}
@@ -3692,11 +3719,13 @@ packages:
       '@testing-library/dom': 8.13.0
     dev: true
 
-  /@testing-library/user-event/14.1.1:
+  /@testing-library/user-event/14.1.1_@testing-library+dom@8.13.0:
     resolution: {integrity: sha512-XrjH/iEUqNl9lF2HX9YhPNV7Amntkcnpw0Bo1KkRzowNDcgSN9i0nm4Q8Oi5wupgdfPaJNMAWa61A+voD6Kmwg==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@testing-library/dom': '>=7.21.4'
+    dependencies:
+      '@testing-library/dom': 8.13.0
     dev: true
 
   /@tootallnate/once/2.0.0:
@@ -11466,6 +11495,16 @@ packages:
       react: 18.1.0
       react-dom: 18.1.0_react@18.1.0
       react-is: 17.0.2
+    dev: true
+
+  /react-error-boundary/3.1.4_react@18.1.0:
+    resolution: {integrity: sha512-uM9uPzZJTF6wRQORmSrvOIgt4lJ9MC1sNgEOj2XGsDTRE4kmpWxg7ENK9EWNKJRMAOY9z0MuF4yIfl6gp4sotA==}
+    engines: {node: '>=10', npm: '>=6'}
+    peerDependencies:
+      react: '>=16.13.1'
+    dependencies:
+      '@babel/runtime': 7.17.9
+      react: 18.1.0
     dev: true
 
   /react-fast-compare/3.2.0:
