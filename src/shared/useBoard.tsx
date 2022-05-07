@@ -8,9 +8,7 @@ type UseBoardProps = {
     initialWinner: string
 }
 
-type UseBoardResult = {
-    winner: string;
-    player: string;
+export type UseBoardResult = {
     boards: any[];
     handlePlayClick: (index: number) => void;
     handleResetClick: () => void;
@@ -72,8 +70,6 @@ export const useBoard = ({ initialBoards, initialWinner, initialPlayer }: UseBoa
   );
 
   return {
-    winner,
-    player,
     boards,
     handlePlayClick,
     handleResetClick,

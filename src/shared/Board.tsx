@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
 
-import { useBoard } from './useBoard';
+import type { UseBoardResult } from './useBoard';
 import { Square } from './square';
 import { Button } from './Button';
 
@@ -20,13 +20,7 @@ const Box = styled.div`
   text-align: center;
 `;
 
-export const Board = () => {
-  const initialWinner = '';
-  const initialPlayer = 'O';
-  const initialBoards = Array(9).fill('');
-  const {
-    winner, player, boards, handlePlayClick, handleResetClick, renderGameStatus,
-  } = useBoard({ initialBoards, initialPlayer, initialWinner });
+export const Board = ({boards, handlePlayClick, handleResetClick, renderGameStatus}: UseBoardResult) => {
   return (
     <div>
       {renderGameStatus()}
