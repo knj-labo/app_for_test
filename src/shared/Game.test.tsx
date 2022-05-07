@@ -55,6 +55,36 @@ describe('Game のコンポーネントの場合で', () => {
                 expect(screen.getByTestId('status').textContent).toBe(WINNER_IS_X_PLAYER_TEXT);
             })
         })
+
+        it(`Resetボタンをクリックされたとき、初期表示に戻る` , async () => {''
+            const squares = screen.queryAllByTestId('square')
+
+            fireEvent.click(squares[0])
+            fireEvent.click(squares[3])
+            fireEvent.click(squares[6])
+            fireEvent.click(squares[4])
+            fireEvent.click(squares[7])
+            fireEvent.click(squares[5])
+
+            await waitFor(() => {
+                expect(screen.getByTestId('status').textContent).toBe(WINNER_IS_X_PLAYER_TEXT);
+            })
+
+            const resetButtonElement = screen.getByTestId('button')
+            fireEvent.click(resetButtonElement)
+
+            expect(squares[0].textContent).toBe('')
+            expect(squares[1].textContent).toBe('')
+            expect(squares[2].textContent).toBe('')
+            expect(squares[3].textContent).toBe('')
+            expect(squares[4].textContent).toBe('')
+            expect(squares[5].textContent).toBe('')
+            expect(squares[6].textContent).toBe('')
+            expect(squares[7].textContent).toBe('')
+            expect(squares[8].textContent).toBe('')
+
+            expect(screen.getByTestId('status').textContent).toBe(NEXT_PLAYER_IS_O)
+        })
     })
     const DRAW_TEXT = 'Draw';
     it('引き分けの場合なら', async () => {
@@ -74,7 +104,7 @@ describe('Game のコンポーネントの場合で', () => {
             expect(screen.getByTestId('status').textContent).toBe(DRAW_TEXT);
         });
     })
-    it(`クリック後にプレイヤーは入れ替わり、${NEXT_PLAYER_IS_X}と${NEXT_PLAYER_IS_O}が交互に表示される`, async () => {
+    it(`クリックごとにプレイヤーは入れ替わり、${NEXT_PLAYER_IS_X}と${NEXT_PLAYER_IS_O}が交互に表示される`, async () => {
         const squares = screen.queryAllByTestId('square')
         expect(screen.getByTestId('status').textContent).toBe(NEXT_PLAYER_IS_O);
         fireEvent.click(squares[0])
@@ -91,4 +121,11 @@ describe('Game のコンポーネントの場合で', () => {
         });
     })
 
+    it('クリックされたsquareコンポーネントは2回目以降はクリックできない', async () => {
+        const squares = screen.queryAllByTestId('square')
+        fireEvent.click(squares[0])
+        expect(squares[0].textContent).toBe('O')
+        fireEvent.click(squares[0])
+        expect(squares[0].textContent).toBe('O')
+    })
 })
