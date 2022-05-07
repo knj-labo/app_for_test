@@ -36,7 +36,7 @@ const Button = styled.div`
 `;
 
 export const Square = ({ marker, index, onClick }: Props): JSX.Element => (
-  <Button role="button" tabIndex={0} key={index} onClick={() => onClick(index)}>
+  <Button role="button" tabIndex={0} key={index} onClick={() => onClick(index)} data-testid="square">
     {marker}
   </Button>
 );
