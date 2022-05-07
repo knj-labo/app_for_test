@@ -9,7 +9,7 @@ type UseBoardProps = {
 }
 
 export type UseBoardResult = {
-    boards: any[];
+    boards: Marker[];
     handlePlayClick: (index: number) => void;
     handleResetClick: () => void;
     renderGameStatus: () => JSX.Element;
