@@ -61,13 +61,16 @@ export const useBoard = ({ initialBoards, initialWinner, initialPlayer }: UseBoa
     setWinner(initialWinner);
   }, []);
 
-  const renderGameStatus = ():JSX.Element => (
-    <h3 data-testid='status'>
-      { boards.every((marker) => marker !== '') && !winner && 'Draw' }
-      { !boards.every((marker) => marker !== '') && !winner && `Next player: ${player === 'O' ? 'X' : 'O'}`}
-      {winner && `Winner: ${winner}`}
-    </h3>
-  );
+  const renderGameStatus = ():JSX.Element => {
+    const isEmpty = boards.every((marker) => marker !== '');
+    return (
+      <h3 data-testid="status">
+        { winner && `Winner: ${winner}`}
+        { isEmpty && !winner && 'Draw' }
+        { !isEmpty && !winner && `Next player: ${player === 'O' ? 'X' : 'O'}`}
+      </h3>
+    );
+  };
 
   return {
     boards,

@@ -21,7 +21,7 @@ const StyledButton = styled.button`
 `;
 
 export const Button = ({ onClick }: Props): JSX.Element => (
-  <StyledButton type="button" onClick={onClick} data-testid='button'>
+  <StyledButton type="button" onClick={onClick} data-testid="button">
     Reset
   </StyledButton>
 );

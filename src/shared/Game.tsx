@@ -11,14 +11,14 @@ const Main = styled.main`
 `;
 
 export const Game = () => {
-const initialWinner = '';
-const initialPlayer = 'O';
-const initialBoards = Array(9).fill('');
-const props = useBoard({ initialBoards, initialPlayer, initialWinner });
+  const initialWinner = '';
+  const initialPlayer = 'O';
+  const initialBoards = Array(9).fill('');
+  const props = useBoard({ initialBoards, initialPlayer, initialWinner });
 
-return (
+  return (
     <Main>
-        <Board {...props} />
+      <Board {...props} />
     </Main>
-    )
+  );
 };

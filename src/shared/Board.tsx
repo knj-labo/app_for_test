@@ -20,18 +20,18 @@ const Box = styled.div`
   text-align: center;
 `;
 
-export const Board = ({boards, handlePlayClick, handleResetClick, renderGameStatus}: UseBoardResult) => {
-  return (
-    <div>
-      {renderGameStatus()}
-      <Squares>
-        {boards.map((marker, index) => (
-          <Square key={index} index={index} marker={marker} onClick={handlePlayClick} />
-        ))}
-      </Squares>
-      <Box>
-        <Button onClick={handleResetClick} />
-      </Box>
-    </div>
-  );
-};
+export const Board = ({
+  boards, handlePlayClick, handleResetClick, renderGameStatus,
+}: UseBoardResult) => (
+  <div>
+    {renderGameStatus()}
+    <Squares>
+      {boards.map((marker, index) => (
+        <Square key={index} index={index} marker={marker} onClick={handlePlayClick} />
+      ))}
+    </Squares>
+    <Box>
+      <Button onClick={handleResetClick} />
+    </Box>
+  </div>
+);
