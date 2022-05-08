@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import styled from '@emotion/styled';
 
-import { useBoard } from './useBoard';
+import type { UseBoardResult } from './useBoard';
 import { Square } from './square';
 import { Button } from './Button';
 
@@ -20,28 +20,18 @@ const Box = styled.div`
   text-align: center;
 `;
 
-export const Board = () => {
-  const initialWinner = '';
-  const initialPlayer = 'O';
-  const initialBoards = Array(9).fill('');
-  const {
-    winner, player, boards, handlePlayClick, handleResetClick,
-  } = useBoard({ initialBoards, initialPlayer, initialWinner });
-  return (
-    <div>
-        <h3>
-            { boards.every((marker) => marker !== '') && !winner && 'Draw' }
-            { !boards.every((marker) => marker !== '') && !winner && `Player: ${player === 'O' ? 'X' : 'O'}`}
-            {winner && `Winner: ${winner}`}
-        </h3>
-        <Squares>
-        {boards.map((marker, index) => (
-          <Square key={index} index={index} marker={marker} onClick={handlePlayClick} />
-        ))}
-      </Squares>
-      <Box>
-        <Button onClick={handleResetClick} />
-      </Box>
-    </div>
-  );
-};
+export const Board = ({
+  boards, handlePlayClick, handleResetClick, renderGameStatus,
+}: UseBoardResult) => (
+  <div>
+    {renderGameStatus()}
+    <Squares>
+      {boards.map((marker, index) => (
+        <Square key={index} index={index} marker={marker} onClick={handlePlayClick} />
+      ))}
+    </Squares>
+    <Box>
+      <Button onClick={handleResetClick} />
+    </Box>
+  </div>
+);

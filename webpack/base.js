@@ -13,7 +13,14 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                use: [{loader: "ts-loader"}],
+                use: [
+                    {
+                        loader: "ts-loader",
+                        options: {
+                            transpileOnly: true,
+                        },
+                    }
+                ],
             },
             {
                 test: /\.css$/,
