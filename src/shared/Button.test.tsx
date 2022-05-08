@@ -1,6 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Button } from './Button';
-import '@testing-library/jest-dom/extend-expect';
 
 describe('ボタンのコンポーネントの場合で', () => {
   const mockOnClick = jest.fn();
