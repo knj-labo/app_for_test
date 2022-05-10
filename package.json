@@ -4,6 +4,7 @@
     "lint": "eslint --fix --ext .jsx,.js,.tsx,.ts src/",
     "test": "jest --config ./jest.config.json",
     "test:watch": "npm run test -- --watch",
+    "test:cypress": "cypress open",
     "dev": "webpack-dev-server --open --config webpack/development.js",
     "build": "webpack --config webpack/production.js",
     "storybook": "start-storybook -p 6006",
